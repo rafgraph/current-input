@@ -47,6 +47,13 @@
     html.addEventListener('touchcancel', handleTouchEndCancel, true);
     html.addEventListener('mouseenter', handleMouseEnterDown, true);
     html.addEventListener('mousedown', handleMouseEnterDown, true);
+
+    // set initial current input based on primary input;
+    if (window.matchMedia("(hover: hover)").matches) {
+      checkInputChange('mouse');
+    } else {
+      checkInputChange('touch');
+    }
   }
 
   function setPointerEventListeners() {
@@ -58,8 +65,10 @@
   } else if (pointerEvents && maxTouchPoints){
     setPointerEventListeners();
   } else if (touchEventsApi) {
+    // touch only device, don't set listeners
     setDataAttribute('touch');
   } else {
+    // mouse only device, don't set listeners
     setDataAttribute('mouse');
   }
 
