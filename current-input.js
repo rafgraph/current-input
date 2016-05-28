@@ -9,6 +9,7 @@
 
   var touchEventsApi = 'ontouchstart' in window;
   var anyHover = window.matchMedia("(any-hover: hover)").matches;
+  var anyPointerCoarse = window.matchMedia("(any-pointer: coarse)").matches;
   var pointerEvents = (function() {
     if ('PointerEvent' in window) return 'PointerEvent';
     if ('MSPointerEvent' in window) return 'MSPointerEvent';
@@ -84,10 +85,12 @@
     }
   }
 
-  if (touchEventsApi && anyHover) {
+  if (touchEventsApi && (anyHover || anyPointerCoarse)) {
+    // hybrid device with touch events api
     setTouchMouseEventListeners();
     setInitialCurrentInput();
-  } else if (pointerEvents && maxTouchPoints && (anyHover === false)) {
+  } else if (pointerEvents && maxTouchPoints &&
+    (anyHover === false && anyPointerCoarse === false)) {
     // touch only device, don't set listeners
     setDataAttribute('touch');
   } else if (pointerEvents && maxTouchPoints){
