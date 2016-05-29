@@ -4,8 +4,6 @@
   var body = document.querySelector('body');
   var html = document.querySelector('html');
   var currentInput = '';
-  var touchState = false;
-  var touchTime = new Date();
 
   var touchEventsApi = 'ontouchstart' in window;
   var anyHover = window.matchMedia("(any-hover: hover)").matches;
@@ -19,6 +17,27 @@
     if (window.navigator.msMaxTouchPoints > 0) return 'msMaxTouchPoints';
   }());
 
+  // set up based on device type
+  if (touchEventsApi && (anyHover || anyPointerCoarse)) {
+    // hybrid device with touch events api
+    setTouchEventListeners();
+    setInitialCurrentInput();
+  } else if (pointerEvents && maxTouchPoints &&
+    (anyHover === false && anyPointerCoarse === false)) {
+    // touch only device, don't set listeners
+    setDataAttribute('touch');
+  } else if (pointerEvents && maxTouchPoints){
+    addPointerEventListeners();
+    setInitialCurrentInput();
+  } else if (touchEventsApi) {
+    // touch only device, don't set listeners
+    setDataAttribute('touch');
+  } else {
+    // mouse only device, don't set listeners
+    setDataAttribute('mouse');
+  }
+
+  // set current input functions
   function setDataAttribute(input) {
     body.dataset.currentinput = input;
   }
@@ -39,69 +58,86 @@
     }
   }
 
+  // touch and mouse events functions
   function handleTouchStart() {
-    touchState = true;
     checkInputChange('touch');
+    removeMouseEventListeners();
   }
 
   function handleTouchEndCancel() {
-    touchState = false;
-    touchTime = new Date();
+    setTimeout(function() {
+      setMouseEventListeners();
+    }, 500);
   }
 
-  function handleMouseEnterDown() {
-    if (!touchState && new Date() - touchTime > 500) checkInputChange('mouse');
+  function handleMouseMoveDown() {
+    checkInputChange('mouse');
+    removeMouseEventListeners();
   }
 
-  function setTouchMouseEventListeners() {
+  function setTouchEventListeners() {
     html.addEventListener('touchstart', handleTouchStart, true);
     html.addEventListener('touchend', handleTouchEndCancel, true);
     html.addEventListener('touchcancel', handleTouchEndCancel, true);
-    html.addEventListener('mouseenter', handleMouseEnterDown, true);
-    html.addEventListener('mousedown', handleMouseEnterDown, true);
   }
 
-  function handlePointerEvent(e) {
-    var rawType = e.pointerType;
+  function setMouseEventListeners() {
+    html.addEventListener('mousemove', handleMouseMoveDown, true);
+    html.addEventListener('mousedown', handleMouseMoveDown, true);
+  }
+
+  function removeMouseEventListeners() {
+    html.removeEventListener('mousemove', handleMouseMoveDown, true);
+    html.removeEventListener('mousedown', handleMouseMoveDown, true);
+  }
+
+  // pointer events functions
+  function mapPointerType(rawType) {
     if (
-      rawType === 'touch' ||
-      rawType === 2 ||
-      rawType === 'pen' ||
-      rawType === 3
+      rawType === 'touch' || rawType === 2 ||
+      rawType === 'pen' || rawType === 3
     ) {
-      checkInputChange('touch');
+      return 'touch';
     } else if (rawType === 'mouse' || rawType === 4) {
+      return 'mouse';
+    }
+  }
+
+  function handlePointerDown(e) {
+    checkInputChange(mapPointerType(e.pointerType));
+  }
+
+  function handlePointerUpCancel(e) {
+    if (mapPointerType(e.pointerType) === 'touch') {
+      if (pointerEvents === 'PointerEvent') {
+        html.addEventListener('pointermove', handlePointerMove, true);
+      } else if (pointerEvents === 'MSPointerEvent') {
+        html.addEventListener('MSPointerMove', handlePointerMove, true);
+      }
+    }
+  }
+
+  function handlePointerMove(e) {
+    if (mapPointerType(e.pointerType) === 'mouse') {
       checkInputChange('mouse');
+      if (pointerEvents === 'PointerEvent') {
+        html.removeEventListener('pointermove', handlePointerMove, true);
+      } else if (pointerEvents === 'MSPointerEvent') {
+        html.removeEventListener('MSPointerMove', handlePointerMove, true);
+      }
     }
   }
 
-  function setPointerEventListeners() {
+  function addPointerEventListeners() {
     if (pointerEvents === 'PointerEvent') {
-      html.addEventListener('pointerdown', handlePointerEvent, true);
-      html.addEventListener('pointerenter', handlePointerEvent, true);
+      html.addEventListener('pointerdown', handlePointerDown, true);
+      html.addEventListener('pointerup', handlePointerUpCancel, true);
+      html.addEventListener('pointercancel', handlePointerUpCancel, true);
     } else if (pointerEvents === 'MSPointerEvent') {
-      html.addEventListener('MSPointerDown', handlePointerEvent, true);
-      html.addEventListener('MSPointerEnter', handlePointerEvent, true);
+      html.addEventListener('MSPointerDown', handlePointerDown, true);
+      html.addEventListener('MSPointerUp', handlePointerUpCancel, true);
+      html.addEventListener('MSPointerCancel', handlePointerUpCancel, true);
     }
-  }
-
-  if (touchEventsApi && (anyHover || anyPointerCoarse)) {
-    // hybrid device with touch events api
-    setTouchMouseEventListeners();
-    setInitialCurrentInput();
-  } else if (pointerEvents && maxTouchPoints &&
-    (anyHover === false && anyPointerCoarse === false)) {
-    // touch only device, don't set listeners
-    setDataAttribute('touch');
-  } else if (pointerEvents && maxTouchPoints){
-    setPointerEventListeners();
-    setInitialCurrentInput();
-  } else if (touchEventsApi) {
-    // touch only device, don't set listeners
-    setDataAttribute('touch');
-  } else {
-    // mouse only device, don't set listeners
-    setDataAttribute('mouse');
   }
 
 }());
