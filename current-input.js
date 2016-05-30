@@ -2,6 +2,7 @@
   'use-strict';
 
   var body = document.querySelector('body');
+  var html = document.querySelector('html');
   var currentInput = '';
   var touchEventsApi = 'ontouchstart' in window;
   var anyHover = window.matchMedia("(any-hover: hover)").matches;
@@ -81,23 +82,23 @@
   }
 
   function setTouchEventListeners() {
-    body.addEventListener('touchstart', handleTouchStart, true);
-    body.addEventListener('touchend', handleTouchEndCancel, true);
-    body.addEventListener('touchcancel', handleTouchEndCancel, true);
+    html.addEventListener('touchstart', handleTouchStart, true);
+    html.addEventListener('touchend', handleTouchEndCancel, true);
+    html.addEventListener('touchcancel', handleTouchEndCancel, true);
   }
 
   function setMouseEventListeners() {
-    body.addEventListener('mousemove', handleMouseMoveDown, true);
-    body.addEventListener('mousedown', handleMouseMoveDown, true);
+    html.addEventListener('mousemove', handleMouseMoveDown, true);
+    html.addEventListener('mousedown', handleMouseMoveDown, true);
   }
 
   function removeMouseEventListeners() {
-    body.removeEventListener('mousemove', handleMouseMoveDown, true);
-    body.removeEventListener('mousedown', handleMouseMoveDown, true);
+    html.removeEventListener('mousemove', handleMouseMoveDown, true);
+    html.removeEventListener('mousedown', handleMouseMoveDown, true);
   }
 
   function addBlankTouchListenerToBody() {
-    body.addEventListener('touchstart', function(){}, false);
+    html.addEventListener('touchstart', function(){}, false);
   }
 
   // pointer events functions
@@ -132,29 +133,29 @@
 
   function setPointerDownUpCancelEventListeners() {
     if (pointerEvents === 'PointerEvent') {
-      body.addEventListener('pointerdown', handlePointerDown, true);
-      body.addEventListener('pointerup', handlePointerUpCancel, true);
-      body.addEventListener('pointercancel', handlePointerUpCancel, true);
+      html.addEventListener('pointerdown', handlePointerDown, true);
+      html.addEventListener('pointerup', handlePointerUpCancel, true);
+      html.addEventListener('pointercancel', handlePointerUpCancel, true);
     } else if (pointerEvents === 'MSPointerEvent') {
-      body.addEventListener('MSPointerDown', handlePointerDown, true);
-      body.addEventListener('MSPointerUp', handlePointerUpCancel, true);
-      body.addEventListener('MSPointerCancel', handlePointerUpCancel, true);
+      html.addEventListener('MSPointerDown', handlePointerDown, true);
+      html.addEventListener('MSPointerUp', handlePointerUpCancel, true);
+      html.addEventListener('MSPointerCancel', handlePointerUpCancel, true);
     }
   }
 
   function setPointerMoveEventListener() {
     if (pointerEvents === 'PointerEvent') {
-      body.addEventListener('pointermove', handlePointerMove, true);
+      html.addEventListener('pointermove', handlePointerMove, true);
     } else if (pointerEvents === 'MSPointerEvent') {
-      body.addEventListener('MSPointerMove', handlePointerMove, true);
+      html.addEventListener('MSPointerMove', handlePointerMove, true);
     }
   }
 
   function removePointerMoveEventListner() {
     if (pointerEvents === 'PointerEvent') {
-      body.removeEventListener('pointermove', handlePointerMove, true);
+      html.removeEventListener('pointermove', handlePointerMove, true);
     } else if (pointerEvents === 'MSPointerEvent') {
-      body.removeEventListener('MSPointerMove', handlePointerMove, true);
+      html.removeEventListener('MSPointerMove', handlePointerMove, true);
     }
   }
 
