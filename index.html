@@ -8,7 +8,7 @@
       div {
         font-size: 30px;
       }
-      [data-currentinput='mouse'] div {
+      /*[data-currentinput='mouse'] div {
         color: yellow;
       }
       [data-currentinput='mouse'] div:hover {
@@ -23,10 +23,6 @@
       [data-currentinput='touch'] div:active {
         color: blue;
       }
-      body {
-        height: 50vh;
-        border: 2px solid #B6E3ED;
-      }
 
       [data-test='mouse-only'] div {
         border: 2px solid red;
@@ -36,10 +32,41 @@
       }
       [data-test='hybrid'] div {
         border: 2px solid green;
+      }*/
+
+      .mouse div {
+        color: yellow;
+      }
+      .mouse div:hover {
+        color: green;
+      }
+      .mouse div:active {
+        color: red;
+      }
+      .touch div {
+        color: orange;
+      }
+      .touch div:active {
+        color: blue;
+      }
+
+      .mouse-only div {
+        border: 2px solid red;
+      }
+      .touch-only div {
+        border: 2px solid blue;
+      }
+      .hybrid div {
+        border: 2px solid green;
+      }
+
+      .abc {
+        height: 50vh;
+        border: 2px solid #B6E3ED;
       }
     </style>
   </head>
-  <body>
+  <body class="abc">
     <div>hello world</div>
     <script src="./current-input.js" charset="utf-8"></script>
   </body>

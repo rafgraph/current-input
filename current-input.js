@@ -20,7 +20,10 @@
   }());
 
   function setDataAttribute(input) {
-    body.dataset.currentinput = input;
+    // body.dataset.currentinput = input;
+
+    if (currentInput !== '') body.classList.remove(currentInput);
+    body.classList.add(input);
   }
 
   function checkInputChange(input) {
@@ -98,27 +101,37 @@
     // hybrid device with touch events api
     setTouchMouseEventListeners();
     setInitialCurrentInput();
-    body.dataset.test = 'hybrid';
+    // body.dataset.test = 'hybrid';
+    body.classList.add('hybrid');
+
   } else if (pointerEvents && maxTouchPoints &&
     (anyHover === false && anyPointerFine === false)) {
     // touch only device, don't set listeners
     addBlankTouchListenerToBody();
     setDataAttribute('touch');
-    body.dataset.test = 'touch-only';
+    // body.dataset.test = 'touch-only';
+    body.classList.add('touch-only');
+
   } else if (pointerEvents && maxTouchPoints){
     setPointerEventListeners();
     setInitialCurrentInput();
-    body.dataset.test = 'hybrid';
+    // body.dataset.test = 'hybrid';
+    body.classList.add('hybrid');
+
   } else if (touchEventsApi) {
     // touch only device, don't set listeners
     setDataAttribute('touch');
     // required for active state to be enabled when touching the screen
     addBlankTouchListenerToBody();
-    body.dataset.test = 'touch-only';
+    // body.dataset.test = 'touch-only';
+    body.classList.add('touch-only');
+
   } else {
     // mouse only device, don't set listeners
     setDataAttribute('mouse');
-    body.dataset.test = 'mouse-only';
+    // body.dataset.test = 'mouse-only';
+    body.classList.add('mouse-only');
+
   }
 
 }());
