@@ -28,10 +28,16 @@
         color: blue;
       }
 
+      .no-select {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
     </style>
   </head>
   <body>
-    <div>hello world</div>
+    <div class="no-select">hello world</div>
     <script src="./current-input.js" charset="utf-8"></script>
   </body>
 </html>
