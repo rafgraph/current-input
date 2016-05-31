@@ -5,68 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Current Input Test</title>
     <style media="screen">
-      div {
-        font-size: 30px;
-      }
-      /*[data-currentinput='mouse'] div {
-        color: yellow;
-      }
-      [data-currentinput='mouse'] div:hover {
-        color: green;
-      }
-      [data-currentinput='mouse'] div:active {
-        color: red;
-      }
-      [data-currentinput='touch'] div {
-        color: orange;
-      }
-      [data-currentinput='touch'] div:active {
-        color: blue;
-      }
-
-      [data-test='mouse-only'] div {
-        border: 2px solid red;
-      }
-      [data-test='touch-only'] div {
-        border: 2px solid blue;
-      }
-      [data-test='hybrid'] div {
-        border: 2px solid green;
-      }*/
-
-      .mouse div {
-        color: yellow;
-      }
-      .mouse div:hover {
-        color: green;
-      }
-      .mouse div:active {
-        color: red;
-      }
-      .touch div {
-        color: orange;
-      }
-      .touch div:active {
-        color: blue;
-      }
-
-      .mouse-only div {
-        border: 2px solid red;
-      }
-      .touch-only div {
-        border: 2px solid blue;
-      }
-      .hybrid div {
-        border: 2px solid green;
-      }
-
-      .abc {
+      body {
         height: 50vh;
         border: 2px solid #B6E3ED;
       }
+      div {
+        font-size: 30px;
+      }
+      .current-input-mouse div {
+        color: yellow;
+      }
+      .current-input-mouse div:hover {
+        color: green;
+      }
+      .current-input-mouse div:active {
+        color: red;
+      }
+      .current-input-touch div {
+        color: orange;
+      }
+      .current-input-touch div:active {
+        color: blue;
+      }
+
     </style>
   </head>
-  <body class="abc">
+  <body>
     <div>hello world</div>
     <script src="./current-input.js" charset="utf-8"></script>
   </body>
