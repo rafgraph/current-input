@@ -1,0 +1,15 @@
+{
+  "name": "current-input",
+  "version": "0.0.0",
+  "main": "current-input.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafrex/current-input.git"
+  },
+  "author": "Rafael Pedicini <code@rafrex.com> (http://www.rafrex.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rafrex/current-input/issues"
+  },
+  "homepage": "https://github.com/rafrex/current-input#readme"
+}
