@@ -49,17 +49,12 @@ a {
   color: black;
 }
 
-a:hover {
+.current-input-mouse a:hover {
   color: green;
 }
 
-a:active {
+.current-input-mouse a:active {
   color: red;
-}
-
-/* this must match the standard style to fix the sticky hover problem */
-.current-input-touch a:hover {
-  color: black;
 }
 
 /* the touch active pseudo state */
@@ -68,10 +63,8 @@ a:active {
 }
 ```
 
-Note that the `current-input-mouse` class is not used as a CSS selector. The default state for `:hover` and `:active` assumes that the current input is a mouse, and are overridden when the current input is touch. It is best to style CSS this way (assume mouse, and modify for touch) so that your site works normally on legacy browsers that don't support `current-input`'s detection tests.
-
 ## Sticky hover problem
-The sticky hover problem on touch devices occurs when you tap something that has a `:hover` state. The `:hover` state sticks until you tap someplace else on the screen (or on another link in some mobile browsers). The reason for this is back in the early days of mobile the web relied heavily on hover menus, so on mobile you could tap to see the hover menu. Sites are (or should) no longer be built this way, so now the sticky hover feature has become a bug that is the cause of some ugliness. `current-input` fixes the problem by allowing you to style the `:hover` state for mouse and touch inputs separately, so when the class `current-input-touch` is present, you can style the `:hover` state for an element the same as when it's not in the `:hover` state, thus fixing the problem.
+The sticky hover problem on touch devices occurs when you tap something that has a `:hover` state. The `:hover` state sticks until you tap someplace else on the screen (or on another link in some mobile browsers). The reason for this is back in the early days of mobile the web relied heavily on hover menus, so on mobile you could tap to see the hover menu. Sites are (or should) no longer be built this way, so now the sticky hover feature has become a bug that is the cause of some ugliness. `current-input` fixes the problem by allowing you to style the `:hover` state for mouse and touch inputs separately, so now you can only style the `:hover` state when the `current-input-mouse` class is present, and do nothing when the `current-input-touch` class is present, thus fixing the problem.
 
 Test out the [live example][liveExample] on a touch device to see the sticky hover problem and solution for yourself.
 
