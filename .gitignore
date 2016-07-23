@@ -1,5 +1,9 @@
-# Files marked with gitigx
-*gitigx*
-
 # Dependency directory
 node_modules
+
+# Transpiled lib and dist
+lib
+dist
+
+# Files marked with gitigx
+*gitigx*
