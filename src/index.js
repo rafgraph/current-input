@@ -30,6 +30,8 @@ function setupCurrentInput() {
     /* eslint no-unused-expressions: ["error", { "allowTernary": true }] */
     detectIt.primaryHover === 'hover' ? updateCurrentInput('mouse') : updateCurrentInput('touch');
   }
+
+  document.removeEventListener('DOMContentLoaded', setupCurrentInput);
 }
 
 (() => {
