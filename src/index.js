@@ -16,7 +16,7 @@ function setupCurrentInput() {
   if (detectIt.deviceType === 'mouseOnly') updateCurrentInput('mouse');
   else if (detectIt.deviceType === 'touchOnly') {
     updateCurrentInput('touch');
-    // add blank touch listener to body to enable active state when touchin the screen
+    // add blank touch listener to body to enable :active state when touching the screen
     addListener(body, { 'touchstart passive capture': () => {} });
   } else {
     // add listeners for hybrid device
