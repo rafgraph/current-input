@@ -1,7 +1,5 @@
 # Current Input
 
-[Live example][liveExample] &#8212; [view on npm][onNpm]
-
 Detects the current input being used (mouse or touch) and adds a class to the body indicating the current input type. Used with the appropriate CSS selectors and styling this will fix the [sticky hover problem][stickyHover] on touch devices and allow you to work with 3 interactive pseudo states in CSS - hover, active, and touch active.
 
 `current-input` is as easy as set it and forget it, and is compatible with all modern browsers (both touch event and pointer event based browsers). It will automatically add the `current-input-mouse` or `current-input-touch` class to the `body` based on the current input type.
@@ -66,10 +64,7 @@ a {
 ## Sticky hover problem
 The sticky hover problem on touch devices occurs when you tap something that has a `:hover` state. The `:hover` state sticks until you tap someplace else on the screen (or on another link in some mobile browsers). The reason for this is back in the early days of mobile the web relied heavily on hover menus, so on mobile you could tap to see the hover menu. Sites are (or should) no longer be built this way, so now the sticky hover feature has become a bug that is the cause of some ugliness. `current-input` fixes the problem by allowing you to style the `:hover` state for mouse and touch inputs separately, so now you can only style the `:hover` state when the `current-input-mouse` class is present, and do nothing when the `current-input-touch` class is present, thus fixing the problem.
 
-Test out the [live example][liveExample] on a touch device to see the sticky hover problem and solution for yourself.
 
-[liveExample]: http://current-input.rafrex.com
-[onNpm]: https://www.npmjs.com/package/current-input
 [detectIt]: https://github.com/rafrex/detect-it
 [theListener]: https://github.com/rafrex/the-listener
 [stickyHover]: https://github.com/rafrex/current-input#sticky-hover-problem
