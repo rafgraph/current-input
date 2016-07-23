@@ -21,7 +21,7 @@ import 'current-input';
 require('current-input');
 ```
 #### Or add it to `index.html`
-Alternatively you can add it directly to `index.html` as a script. The version that comes from the below CDN is minified and gziped with all dependencies included and will run automatically (or you can download `CurrentInput.min.js` from the `dist` directory in the GitHub repo and serve it from your own server).
+Alternatively you can add it directly to `index.html` as a script. The version that comes from the below CDN is minified and gziped with all dependencies included and will run automatically (or you can manually download `CurrentInput.min.js` from the CDN and serve it from your own server).
 ```html
 <script src="https://npmcdn.com/current-input/dist/CurrentInput.min.js"></script>
 ```
