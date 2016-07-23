@@ -7,7 +7,7 @@ Detects the current input being used (mouse or touch) and adds a class to the bo
 `current-input` is as easy as set it and forget it, and is compatible with all modern browsers (both touch event and pointer event based browsers). It will automatically add the `current-input-mouse` or `current-input-touch` class to the `body` based on the current input type.
 
 #### How it works
-`current-input` uses [`detect-it`][detectIt] to determine if the device is `mouseOnly`, `touchOnly`, or `hybrid`. If the device is `mouseOnly` or `touchOnly` it sets the respective class on the `body` and does nothing more. If the device is a `hybrid`, then it uses [`the-listener`][theListener] to set up passive capture phase event listeners on the `html` to determine what input is currently being used and changes the class on the `body` in real time.
+`current-input` uses [`detect-it`][detectIt] to determine if the device is `mouseOnly`, `touchOnly`, or `hybrid`. If the device is `mouseOnly` or `touchOnly` it sets the respective class on the `body` and does nothing more. If the device is a `hybrid`, then it uses [`the-listener`][theListener] to set up passive capture phase event listeners on the `window` to determine what input is currently being used and changes the class on the `body` in real time.
 
 
 
@@ -23,9 +23,9 @@ import 'current-input';
 require('current-input');
 ```
 #### Or add it to `index.html`
-Alternatively you can add it directly to `index.html` as a script. The version that comes from the below CDN is minified with all dependencies included and will run automatically (or you can download `current-input.min.js` from the `dist` directory in the GitHub repo and serve it from your own server).
+Alternatively you can add it directly to `index.html` as a script. The version that comes from the below CDN is minified and gziped with all dependencies included and will run automatically (or you can download `CurrentInput.min.js` from the `dist` directory in the GitHub repo and serve it from your own server).
 ```html
-<script src="https://npmcdn.com/current-input/dist/current-input.min.js"></script>
+<script src="https://npmcdn.com/current-input/dist/CurrentInput.min.js"></script>
 ```
 
 ## Using `current-input`
