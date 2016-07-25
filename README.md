@@ -1,6 +1,6 @@
 # Current Input
 
-[Live example site][liveExampleSite]
+[Live example site][liveExampleSite] &#8212; [view on npm][onNpm]
 
 Detects the current input being used (mouse or touch) and adds a class to the body indicating the current input type. Used with the appropriate CSS selectors and styling this will fix the [sticky hover problem][stickyHover] on touch devices and allow you to work with 3 interactive states in CSS - hover, active, and touch active.
 
@@ -75,6 +75,7 @@ The work put into `current-input` was made much easier by the excellent suite of
 [stickyHover]: https://github.com/rafrex/current-input#sticky-hover-problem
 
 [liveExampleSite]: http://current-input.rafrex.com
+[onNpm]: https://www.npmjs.com/package/current-input/
 
 [touchTests]: https://patrickhlauke.github.io/touch/
 [patrickHLauke]: https://github.com/patrickhlauke
