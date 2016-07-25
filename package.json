@@ -38,6 +38,6 @@
   },
   "dependencies": {
     "detect-it": "^1.0.0",
-    "the-listener": "^0.1.0"
+    "the-listener": "^1.0.0"
   }
 }
