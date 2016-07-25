@@ -16,6 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/rafrex/current-input.git"
   },
+  "keywords": [
+    "hover",
+    "active",
+    "mouse",
+    "touch"
+  ],
   "author": "Rafael Pedicini <code@rafrex.com>",
   "license": "MIT",
   "bugs": {
