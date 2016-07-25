@@ -1,6 +1,6 @@
 {
   "name": "current-input",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Detect the current input (mouse or touch) and fix the sticky hover problem",
   "main": "lib/index.js",
   "scripts": {
