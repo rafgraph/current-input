@@ -1,8 +1,8 @@
 # Current Input
 
-Detects the current input being used (mouse or touch) and adds a class to the body indicating the current input type. Used with the appropriate CSS selectors and styling this will fix the [sticky hover problem][stickyHover] on touch devices and allow you to work with 3 interactive states in CSS - hover, active, and touch active.
-
 [Live example site][liveExampleSite]
+
+Detects the current input being used (mouse or touch) and adds a class to the body indicating the current input type. Used with the appropriate CSS selectors and styling this will fix the [sticky hover problem][stickyHover] on touch devices and allow you to work with 3 interactive states in CSS - hover, active, and touch active.
 
 `current-input` is as easy as set it and forget it, and is compatible with all modern browsers (both touch event and pointer event based browsers). It will automatically add the `current-input-mouse` or `current-input-touch` class to the `body` based on the current input type.
 
@@ -33,7 +33,7 @@ Alternatively you can add it directly to `index.html` as a script. The version t
 `current-input` will run automatically and will add the class `current-input-mouse` or `current-input-touch` to the `body`. Use the appropriate CSS selectors to style elements based on the current input class.
 
 #### CSS example
-Here is an example using CSS to style links such that it fixes the sticky hover problem on touch devices and provides a unique touch active state.
+Here is an example using CSS to style links such that it fixes the sticky hover problem on touch devices and provides a unique touch active state. See the [live example site][liveExampleSite] for a live version of this example.
 
 
 ```CSS
