@@ -66,9 +66,15 @@ a {
 ## Sticky hover problem
 The sticky hover problem on touch devices occurs when you tap something that has a `:hover` state. The `:hover` state sticks until you tap someplace else on the screen. The reason for this is back in the early days of mobile, the web relied heavily on hover menus, so on mobile you could tap to see the hover menu. Sites are (or should) no longer be built this way, so now the sticky hover feature has become a bug that is the cause of some ugliness. `current-input` fixes the problem by allowing you to style the `:hover` state for mouse and touch inputs separately, so now you can only style the `:hover` state when the `current-input-mouse` class is present, and do nothing when the `current-input-touch` class is present, thus fixing the problem.
 
+#### Thank you
+The work put into `current-input` was made much easier by the excellent suite of [touch/pointer tests and demos][touchTests] put together by [Patrick H. Lauke][patrickHLauke]
+
 
 [detectIt]: https://github.com/rafrex/detect-it
 [theListener]: https://github.com/rafrex/the-listener
 [stickyHover]: https://github.com/rafrex/current-input#sticky-hover-problem
 
 [liveExampleSite]: http://current-input.rafrex.com
+
+[touchTests]: https://patrickhlauke.github.io/touch/
+[patrickHLauke]: https://github.com/patrickhlauke
