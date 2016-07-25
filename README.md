@@ -2,6 +2,8 @@
 
 Detects the current input being used (mouse or touch) and adds a class to the body indicating the current input type. Used with the appropriate CSS selectors and styling this will fix the [sticky hover problem][stickyHover] on touch devices and allow you to work with 3 interactive pseudo states in CSS - hover, active, and touch active.
 
+[Live example site][liveExampleSite]
+
 `current-input` is as easy as set it and forget it, and is compatible with all modern browsers (both touch event and pointer event based browsers). It will automatically add the `current-input-mouse` or `current-input-touch` class to the `body` based on the current input type.
 
 #### How it works
@@ -68,3 +70,5 @@ The sticky hover problem on touch devices occurs when you tap something that has
 [detectIt]: https://github.com/rafrex/detect-it
 [theListener]: https://github.com/rafrex/the-listener
 [stickyHover]: https://github.com/rafrex/current-input#sticky-hover-problem
+
+[liveExampleSite]: http://current-input.rafrex.com
