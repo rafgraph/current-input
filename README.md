@@ -1,4 +1,4 @@
-# Current Input
+# Current Input (and the touch active state)
 
 [Live example site][liveExampleSite] &#8212; [view on npm][onNpm]
 
