@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rafrex/current-input.git"
+    "url": "git+https://github.com/rafgraph/current-input.git"
   },
   "keywords": [
     "hover",
@@ -22,12 +22,12 @@
     "mouse",
     "touch"
   ],
-  "author": "Rafael Pedicini <code@rafrex.com>",
+  "author": "Rafael Pedicini <rafael@rafgraph.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rafrex/current-input/issues"
+    "url": "https://github.com/rafgraph/current-input/issues"
   },
-  "homepage": "https://github.com/rafrex/current-input#readme",
+  "homepage": "https://github.com/rafgraph/current-input#readme",
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
