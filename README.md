@@ -6,33 +6,33 @@
 - Used with the appropriate CSS selectors this will fix the [sticky `:hover` bug](#sticky-hover-bug) on touch devices and allow you to work with 3 interactive states in CSS - hover, active, and touch active.
 - `current-input` is as easy as set it and forget it, and is compatible with all modern browsers. It will automatically add the `current-input-mouse` or `current-input-touch` class to the `body`.
 
-#### How it works
-
-`current-input` uses [`detect-it`](https://github.com/rafgraph/detect-it) to determine if the device is `mouseOnly`, `touchOnly`, or `hybrid`. If the device is `mouseOnly` or `touchOnly` it sets the respective class on the `body` and does nothing more. If the device is a `hybrid`, then it uses [`the-listener`](https://github.com/rafgraph/the-listener) to set up passive capture phase event listeners on the `window` to determine what input is currently being used and changes the class on the `body` in real time.
+---
 
 ## Installing `current-input`
 
-#### Add it to your app
+#### Install it in your app:
 
 ```shell
 npm install --save current-input
 ```
 
-And then import or require it in your app (it will run automatically on import or require).
+And then import it in your app (it will run automatically on import).
 
-```javascript
-import "current-input";
-// OR
-require("current-input");
+```js
+import 'current-input';
 ```
 
-#### Or add the script to `index.html`
+---
 
-Alternatively you can add it directly to `index.html` as a script. The version that comes from the below CDN is minified and gziped with all dependencies included and will run automatically (or you can manually download `CurrentInput.min.js` from the CDN and serve it from your own server).
+#### Or add the script to `index.html`:
+
+Alternatively you can add the script directly to your `index.html`. The version that comes from the Unpkg CDN is minified and gziped with all dependencies included and will run automatically.
 
 ```html
-<script src="https://unpkg.com/current-input@1/dist/CurrentInput.min.js"></script>
+<script src="https://unpkg.com/current-input@2/dist/current-input.umd.production.js"></script>
 ```
+
+---
 
 ## Using `current-input`
 
@@ -72,4 +72,3 @@ a {
 ## Sticky `:hover` bug
 
 The sticky `:hover` bug on touch devices occurs when you tap something that has a `:hover` state. The `:hover` state sticks until you tap someplace else on the screen. The reason for this is back in the early days of mobile, the web relied heavily on hover menus, so on mobile you could tap to see the hover menu. Sites are generally no longer be built this way, so now the sticky hover feature has become a bug. `current-input` fixes the problem by allowing you to style the `:hover` state for mouse and touch inputs separately. Now you can only style the `:hover` state when the `current-input-mouse` class is present, and do nothing when the `current-input-touch` class is present, which fixes this bug.
-s
