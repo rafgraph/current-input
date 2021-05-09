@@ -1,10 +1,13 @@
 # Current Input
 
-[Demo website](https://current-input.rafgraph.dev) &#8212; code in the [`/docs` folder](/docs)
+[![npm bundle size (version)](https://img.shields.io/bundlephobia/minzip/current-input?color=purple)](https://bundlephobia.com/result?p=event-from) ![npm type definitions](https://img.shields.io/npm/types/current-input?color=blue)
 
 - Detects the current input being used (mouse or touch) and adds a `current-input-mouse` or `current-input-touch` class to the `body` indicating the current input type.
-- Used with the appropriate CSS selectors this will fix the [sticky `:hover` bug](#sticky-hover-bug) on touch devices and allow you to work with 3 interactive states in CSS - hover, active, and touch active.
+- Used with the appropriate CSS selectors this will fix the [sticky `:hover` bug](#sticky-hover-bug) on touch devices and allow you to work with 3 interactive states in CSS: hover, active, and touch active.
 - `current-input` is as easy as set it and forget it, and is compatible with all modern browsers. It will automatically add the `current-input-mouse` or `current-input-touch` class to the `body`.
+---
+
+[Demo website](https://current-input.rafgraph.dev) &#8212; demo code in the [`/docs` folder](/docs)
 
 ---
 
