@@ -1,6 +1,6 @@
 {
   "name": "current-input",
-  "version": "2.0.0-dev.0",
+  "version": "2.0.0",
   "description": "Detect the current input (mouse or touch) and fix the sticky :hover bug on touch devices.",
   "main": "dist/current-input.cjs.js",
   "module": "dist/current-input.esm.js",
