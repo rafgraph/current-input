@@ -1,6 +1,6 @@
 # Current Input
 
-[![npm bundle size (version)](https://img.shields.io/bundlephobia/minzip/current-input?color=purple)](https://bundlephobia.com/result?p=event-from) ![npm type definitions](https://img.shields.io/npm/types/current-input?color=blue)
+[![npm bundle size (version)](https://img.shields.io/bundlephobia/minzip/current-input?color=purple)](https://bundlephobia.com/result?p=current-input) ![npm type definitions](https://img.shields.io/npm/types/current-input?color=blue)
 
 - Detects the current input being used (mouse or touch) and adds a `current-input-mouse` or `current-input-touch` class to the `body` indicating the current input type.
 - Used with the appropriate CSS selectors this will fix the [sticky `:hover` bug](#sticky-hover-bug) on touch devices and allow you to work with 3 interactive states in CSS: hover, active, and touch active.
