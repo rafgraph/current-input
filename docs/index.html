@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#000000">
 
     <link rel="stylesheet" href="/index.css">
-    <script src="https://unpkg.com/current-input@1/dist/CurrentInput.min.js"></script>
+    <script src="https://unpkg.com/current-input@2/dist/current-input.umd.production.js"></script>
 
   </head>
   <body>
@@ -26,11 +26,11 @@
         <h3 class="current-input-is">The current input type is: <code class="mouse-type">mouse</code><code class="touch-type">touch</code></h3>
 
         <h2>Standard CSS</h2>
-        <div class="plain-css-example">Hover is green. Active is red.</div>
+        <button class="plain-css-example">Hover is green. Active is red.</button>
         <p><code>:hover</code> and <code>:active</code> pseudo-classes applied normally. Suffers from the sitcky hover problem on touch devices.</p>
 
         <h2>CSS with <code>current-input</code></h2>
-        <div class="current-input-example">Hover is green. Active is red. Touch active is blue.</div>
+        <button class="current-input-example">Hover is green. Active is red. Touch active is blue.</button>
         <p>
           <code>:hover</code> and <code>:active</code> (red) pseudo-classes applied if <code>current-input-mouse</code> class is present.
           <code>:active</code> (blue) pseudo-class applied if <code>current-input-touch</code> class is present. Fixes the sticky hover problem on touch devices and creates 3 interactive states.

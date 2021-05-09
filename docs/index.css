@@ -1,5 +1,8 @@
 /*reset*/
-html, body, div, span, a, p, h1, h2, h3 {
+button {
+  all: unset;
+}
+html, body, div, span, a, button, p, h1, h2, h3 {
   margin: 0;
   border: 0;
   padding: 0;
@@ -10,19 +13,20 @@ html, body, div, span, a, p, h1, h2, h3 {
   background: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
-html {
-  background-color: rgb(0, 120, 0);
+body {
+  font-family: helvetica neue, helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.025em;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 #root {
   background-color: #F0F0F0;
 }
-
 html, body {
   height: 100%;
 }
-
 #root {
   min-height: 100%;
 }
@@ -31,14 +35,6 @@ html, body {
   max-width: 420px;
   margin: 0 auto;
   padding: 10px 15px 20px;
-}
-
-body {
-  font-family: helvetica neue, helvetica, sans-serif;
-  font-size: 16px;
-  letter-spacing: 0.025em;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
 }
 
 .title {
@@ -94,26 +90,31 @@ a {
 }
 
 
-/* interactive examples */
-.plain-css-example:hover {
-  color: green;
-}
-.plain-css-example:active {
-  color: red;
-}
-.current-input-mouse .current-input-example:hover {
-  color: green;
-}
-.current-input-mouse .current-input-example:active {
-  color: red;
-}
-.current-input-touch .current-input-example:active {
-  color: blue;
-}
+/* current-input vs plain css demos */
 .current-input-example, .plain-css-example {
   display: inline-block;
   cursor: pointer;
   padding: 4px 6px;
   border: 1px solid;
   border-radius: 5px;
+}
+.plain-css-example:hover {
+  color: green;
+  border-color: green;
+}
+.plain-css-example:active {
+  color: red;
+  border-color: red;
+}
+.current-input-mouse .current-input-example:hover {
+  color: green;
+  border-color: green;
+}
+.current-input-mouse .current-input-example:active {
+  color: red;
+  border-color: red;
+}
+.current-input-touch .current-input-example:active {
+  color: blue;
+  border-color: blue;
 }
