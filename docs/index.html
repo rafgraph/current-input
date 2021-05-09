@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Current Input</title>
+    <meta name="description" content="Detect the current input (mouse or touch) and fix the sticky :hover bug on touch devices.">
+
+    <style>html{background-color: rgb(0, 120, 0);}</style>
+
+    <link rel="icon" type=”image/svg+xml” href="/favicon/green-grid-144-168-192.svg">
+    <link rel="alternate icon" type="image/png" href="/favicon/green-grid-144-168-192-512x512.png">
+    <link rel="apple-touch-icon" href="/favicon/green-grid-144-168-192-180x180.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" href="/index.css">
+    <script src="https://unpkg.com/current-input@1/dist/CurrentInput.min.js"></script>
+
+  </head>
+  <body>
+    <div id="root">
+      <div>
+        <h1 class="title">Current Input</h1>
+        <div><a class="repo-link" href="https://github.com/rafgraph/current-input" target="_blank">https://github.com/rafgraph/current-input</a></div>
+        <h3 class="current-input-is">The current input type is: <code class="mouse-type">mouse</code><code class="touch-type">touch</code></h3>
+
+        <h2>Standard CSS</h2>
+        <div class="plain-css-example">Hover is green. Active is red.</div>
+        <p><code>:hover</code> and <code>:active</code> pseudo-classes applied normally. Suffers from the sitcky hover problem on touch devices.</p>
+
+        <h2>CSS with <code>current-input</code></h2>
+        <div class="current-input-example">Hover is green. Active is red. Touch active is blue.</div>
+        <p>
+          <code>:hover</code> and <code>:active</code> (red) pseudo-classes applied if <code>current-input-mouse</code> class is present.
+          <code>:active</code> (blue) pseudo-class applied if <code>current-input-touch</code> class is present. Fixes the sticky hover problem on touch devices and creates 3 interactive states.
+        </p>
+
+      </div>
+    </div>
+  </body>
+</html>

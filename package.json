@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib && babel src --presets babel-preset-es2015 -d lib && rm -rf dist && webpack ./lib/index.js ./dist/CurrentInput.js && webpack -p ./lib/index.js ./dist/CurrentInput.min.js",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "start:demo": "npx live-server ./docs"
   },
   "files": [
     "dist",
